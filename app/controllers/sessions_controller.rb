@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     session[:name] = params[:name]
     redirect_to '/'
    else
-    redirect_to :login
+    redirect_to login_path
    end
   end
 
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   if session[:name].present?
     session.delete :name
   end
-  redirect_to :login
+  redirect_to :login_path
  end
 
 end
